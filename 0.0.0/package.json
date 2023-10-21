@@ -1,0 +1,19 @@
+{
+  "name": "perminal",
+  "version": "0.0.0",
+  "description": "Perminal.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaologGithub/Perminal.git"
+  },
+  "author": "Paolog",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PaologGithub/Perminal/issues"
+  },
+  "homepage": "https://github.com/PaologGithub/Perminal#readme"
+}
