@@ -1,5 +1,4 @@
 const fsapi = require("./fsapi")
-const setInputText = require("./getUserInput").setInputText
 
 exports.processCommand = function (command, _callback) {
     cmd = command.split(" ")
@@ -39,7 +38,6 @@ exports.processCommand = function (command, _callback) {
             fsapi.cd()
         } else {
             fsapi.cd(cmd[1])
-            setInputText(__dirname)
         }
     }
     else if (command == "") {

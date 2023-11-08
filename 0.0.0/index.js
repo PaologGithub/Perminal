@@ -1,5 +1,5 @@
 const getUserInput = require("./getUserInput").getUserInput
 const setInputText = require("./getUserInput").setInputText
 
-setInputText(__dirname + "> ")
+setInputText(process.cwd() + "> ")
 getUserInput(); // Commencez la boucle d'entrée

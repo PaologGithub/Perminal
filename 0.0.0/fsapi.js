@@ -16,5 +16,7 @@ exports.mkfile =function mkfile(nameFile, dir=".") {
     file.close()
 }
 exports.cd = function cd(dir=".") {
-    
+    process.chdir(dir)
+    const setInputText = require("./getUserInput").setInputText
+    setInputText(process.cwd() + "> ")
 }
