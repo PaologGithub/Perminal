@@ -11,3 +11,10 @@ exports.dir = function dir(dir=".", _callback) {
 exports.mkdir = function mkdir(nameDir, dir=".") {
     fs.mkdirSync(dir + "/" + nameDir)
 }
+exports.mkfile =function mkfile(nameFile, dir=".") {
+    const file = fs.createWriteStream(dir + "/" + nameFile)
+    file.close()
+}
+exports.cd = function cd(dir=".") {
+    
+}

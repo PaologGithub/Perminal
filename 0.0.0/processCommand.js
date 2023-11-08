@@ -1,4 +1,5 @@
 const fsapi = require("./fsapi")
+const setInputText = require("./getUserInput").setInputText
 
 exports.processCommand = function (command, _callback) {
     cmd = command.split(" ")
@@ -6,7 +7,7 @@ exports.processCommand = function (command, _callback) {
         process.exit(0)
         //process.exit(1)
     } else if (cmd[0] == "clear") {
-        console.clear()
+        process.stdout.write("\u001b[3J\u001b[2J\u001b[1J");console.clear();
     } else if (cmd[0] == "dir") {
         if (cmd[1] != null) {
             fsapi.dir(cmd[1])
@@ -21,7 +22,24 @@ exports.processCommand = function (command, _callback) {
                 fsapi.mkdir(cmd[1])
             }
         } else {
-            console.log("Aborted: Please enter an folderName")
+            console.log("Aborted: Please enter a folderName")
+        }
+    } else if (cmd[0] == "mkfile") {
+        if (cmd[1] !=null) {
+            if (cmd[2] != null) {
+                fsapi.mkfile(cmd[1], cmd[2])
+            } else {
+                fsapi.mkfile(cmd[1])
+            }
+        } else {
+            console.log("Aborted: Please enter a fileName")
+        }
+    } else if (cmd[0] == "cd") {
+        if (cmd[1] == null) {
+            fsapi.cd()
+        } else {
+            fsapi.cd(cmd[1])
+            setInputText(__dirname)
         }
     }
     else if (command == "") {
