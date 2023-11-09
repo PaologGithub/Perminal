@@ -39,6 +39,8 @@ exports.processCommand = function (command, _callback) {
         } else {
             fsapi.cd(cmd[1])
         }
+    } else if (cmd[0] == "help") {
+        require("./helpapi").help(cmd[1])
     }
     else if (command == "") {
         
